@@ -5,19 +5,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Start Bootstrap Theme</title>
+    <title>@yield('title')</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    {!! Html::style("Web/vendor/bootstrap/css/bootstrap.min.css")!!}
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    {!! Html::style("Web/vendor/fontawesome-free/css/all.min.css")!!}
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
-
+    {!! Html::style("Web/css/clean-blog.min.css")!!}
+    @yield('head_tag')
   </head>
 
   <body>
@@ -25,7 +24,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href="index.html">FRASystem</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -33,16 +32,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="#">Courses</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="post.html">Sample Post</a>
+              <a class="nav-link" href="#">Doctors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
         </div>
@@ -50,14 +49,14 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url(@yield('header_image'))">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Clean Blog</h1>
-              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+              <h1>@yield('silder_title')</h1>
+              <span class="subheading">@yield('silder_description')</span>
             </div>
           </div>
         </div>
@@ -66,7 +65,7 @@
 
     <!-- Main Content -->
     <div class="container">
-      
+      @yield('content')
     </div>
 
     <hr>
@@ -106,14 +105,15 @@
           </div>
         </div>
       </div>
+      @yield('footer')
     </footer>
-
+    <!--Jquery  JavaScript  -->
+    {!! Html::script("Web/vendor/jquery/jquery.min.js") !!}
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    {!! Html::script("Web/vendor/bootstrap/js/bootstrap.bundle.min.js") !!}
     <!-- Custom scripts for this template -->
-    <script src="js/clean-blog.min.js"></script>
+    {!! Html::script("Web/js/clean-blog.min.js") !!}
+
 
   
 

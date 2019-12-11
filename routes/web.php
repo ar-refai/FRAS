@@ -20,5 +20,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/main', function (){
-    return view('layouts.web_app');
+    return view('test_view');
+});
+
+Route::get('/courses', function (){
+    return view('courses_view');
+});
+
+Route::get('/admin/main', function (){
+    return view('admin_view');
 });
