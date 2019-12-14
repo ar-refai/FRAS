@@ -1,11 +1,12 @@
 @extends('layouts.admin_app')
 
 
+
+<!-- title section -->
+@section('title')
+FRAS Admin
+    @endsection
 <!-- content section -->
 @section('content')
 
-@endsection
-<!-- title section -->
-@section('admin_title')
-FRAS Admin
-@endsection
+    @endsection

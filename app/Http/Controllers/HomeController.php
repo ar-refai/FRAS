@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\Course;
+use App\Model\Student;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        #this was for trial
+        
+        // $student = Student::find(1);
+        // dump($student->weeks[0]->name);
+        // dump($student->weeks[1]->name);
+        // dump($student->name);
+        // dump($student->phone);
+        
+         return view('home');
     }
 }
