@@ -6,6 +6,7 @@ Edit Courses
 <!-- the content section -->
 @section('content')
 <div class="col-lg-12">
+        <a class="btn btn-link" style="font-size:16px;" href="{{route('Course.Add')}}"><span class="fa fa-book fa-fw"></span>Add Course</a>
     <div class="panel panel-primary">
         <div class="panel-heading">
             Courses
