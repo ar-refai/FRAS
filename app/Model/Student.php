@@ -24,7 +24,7 @@ class Student extends Model
     ];
     // one to many relation between dept and stu
     public function Department(){
-        return $this->belongsTo('App,Model\Department','dept_id');
+        return $this->belongsTo('App\Model\Department','dept_id');
     }
     // many to many relation between student and course
     public function Courses(){
@@ -33,5 +33,9 @@ class Student extends Model
     // many to many relation between student and week
     public function Weeks(){
         return $this->belongsToMany('App\Model\Week','student_week');
+    } 
+    // one to one  relation between student and StudentImage
+    public function StudentImage(){
+        return $this->hasOne('App\Model\StudentImage','student_id');
     } 
 }
