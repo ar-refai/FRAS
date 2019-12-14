@@ -14,20 +14,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/main', function (){
-    return view('test_view');
-});
+Route::prefix('/')->group(function(){
+    Route::get('/MainPage','Web\Main\Main_cont@index')->name('Web.Main');
 
-Route::get('/courses', function (){
-    return view('courses_view');
-});
+    Route::get('/courses', function (){
+        return view('courses_view');
+    });
 
-Route::get('/admin/main', function (){
-    return view('admin_view');
+    Route::get('/admin/main', function (){
+        return view('admin_view');
+    });
 });
 
 Route::prefix('Admin')->group(function(){
@@ -44,6 +44,19 @@ Route::prefix('Admin')->group(function(){
         Route::get('Delete/{id}','Admin\Course\course_cont@delete')->name('Course.Delete');;
         Route::post('Delete/{id}','Admin\Course\course_cont@delete')->name('Course.Delete');;
     });
+
+       // this is grouping of students
+       Route::prefix('Student')->group(function(){
+        Route::get('/','Admin\Student\Student_cont@index')->name('Student.Index');
+
+        Route::get('Add','Admin\Student\Student_cont@add')->name('Student.Add');;
+        Route::post('Add','Admin\Student\Student_cont@add')->name('Student.Add');;
+
+        Route::get('Delete/{id}','Admin\Student\Student_cont@delete')->name('Student.Delete');;
+        Route::post('Delete/{id}','Admin\Student\Student_cont@delete')->name('Student.Delete');;
+    });
+
+
     // this is grouping of images
     Route::prefix('Image')->group(function(){
         Route::get('/','Admin\Image\Image_cont@index')->name('Image.Index');
@@ -55,6 +68,7 @@ Route::prefix('Admin')->group(function(){
         Route::post('Delete/{id}','Admin\Image\Image_cont@delete')->name('Image.Delete');;
 
     });
+    
 
 });
 

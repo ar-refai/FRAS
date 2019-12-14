@@ -30,8 +30,5 @@ class Doctor extends Model
        public function Department(){
         return $this->belongsTo('App\Model\Department','dept_id');
     }
-    // one to one  relation between doctor and DoctorImage
-    public function DoctorImage(){
-        return $this->hasOne('App\Model\DoctorImage','doctor_id');
-    } 
+ 
 }

@@ -21,6 +21,8 @@ class Student extends Model
         'age',
         'sex',
         'dept_id',
+        'imgpath',
+        
     ];
     // one to many relation between dept and stu
     public function Department(){
@@ -34,8 +36,5 @@ class Student extends Model
     public function Weeks(){
         return $this->belongsToMany('App\Model\Week','student_week');
     } 
-    // one to one  relation between student and StudentImage
-    public function StudentImage(){
-        return $this->hasOne('App\Model\StudentImage','student_id');
-    } 
+
 }

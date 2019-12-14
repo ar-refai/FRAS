@@ -1,7 +1,5 @@
 @extends('layouts.admin_app')
 
-
-
 <!-- title section -->
 @section('title')
 FRAS Admin

@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta name="description" content="FRAS System">
+    <meta name="author" content="Abdelrahman Elrefai">
+    
     <title>@yield('title')</title>
-
+    <link rel="icon" sizes="192x192" href="{{url('/image/logo.png')}}">
     <!-- Bootstrap Core CSS -->
     {!! Html::style('Admin/vendor/bootstrap/css/bootstrap.min.css') !!}
     
@@ -269,8 +269,12 @@
                             <a href="{{route('Course.Index')}}"><i class="fa fa-book fa-fw"></i> Courses</a>
                         </li>
                         <li>
+                            <a href="{{route('Student.Index')}}"><i class="fa fa-users fa-fw"></i> Students</a>
+                        </li>
+                        <li>
                             <a href="{{route('Image.Index')}}"><i class="fa fa-photo fa-fw"></i> Gallary</a>
                         </li>
+                        
 
                     </ul>
                 </div>
