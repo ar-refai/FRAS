@@ -32,11 +32,18 @@ Route::get('/admin/main', function (){
 
 Route::prefix('Admin')->group(function(){
     Route::prefix('Course')->group(function(){
-        Route::get('Add','Admin\Course\course_cont@add');
-        Route::post('Add','Admin\Course\course_cont@add');
+        Route::get('/','Admin\Course\course_cont@index')->name('Course.Index');
 
-        Route::get('Update/{id}','Admin\Course\course_cont@update');
-        Route::post('Update/{id}','Admin\Course\course_cont@update');
+        Route::get('Add','Admin\Course\course_cont@add')->name('Course.Add');;
+        Route::post('Add','Admin\Course\course_cont@add')->name('Course.Add');;
+
+        Route::get('Update/{id}','Admin\Course\course_cont@update')->name('Course.Update');;
+        Route::post('Update/{id}','Admin\Course\course_cont@update')->name('Course.Update');;
+
+        Route::get('Delete/{id}','Admin\Course\course_cont@delete')->name('Course.Delete');;
+        Route::post('Delete/{id}','Admin\Course\course_cont@delete')->name('Course.Delete');;
+
+
     });
 });
 

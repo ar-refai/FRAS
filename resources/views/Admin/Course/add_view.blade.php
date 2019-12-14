@@ -8,7 +8,13 @@ Add Course
 @section('content')
 <form class="table-bordered" style="padding:20px" method="post" action="">
     {{ csrf_field() }}
-  <div class="form-group">
+    <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Add Course
+                        </div>
+                        <div class="panel-body">
+                        <div class="form-group">
     <label for="CourseName">Course Name</label>
     <input type="text" name="name" class="form-control" id="CourseName" placeholder="Example:Software Engineering">
   </div>
@@ -37,8 +43,13 @@ Add Course
       <option value="{{$dept->id}}">{{$dept->name}}</option>
       @endforeach
     </select>
-  </div>
-  <input type="submit" value="Save It" class="btn btn-primary">
+  </div>                        </div>
+                        <div class="panel-footer">
+                        <input type="submit" value="Save It" class="btn btn-primary">
+                        </div>
+                    </div>
+                </div>
+
 </form>
 
     @endsection

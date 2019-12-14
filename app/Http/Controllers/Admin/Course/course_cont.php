@@ -4,10 +4,17 @@ namespace App\Http\Controllers\Admin\Course;
 
 use Illuminate\Support\Facades\DB;
 use App\Model\Course;
+use App\Model\Department;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 class course_cont extends Controller
 {
+    // this is the index function
+    public function index(){
+        $courses = Course::select('*')->get();
+        $arr['courses'] = $courses;
+        return view('Admin.Course.index_view' , $arr);
+    }
     // this is the add function 
     public function add(Request $request){
         if($request->isMethod('post')){
@@ -23,11 +30,7 @@ class course_cont extends Controller
             return redirect()->back();
         }
         else{
-            $departments = DB::table('departments')->select('id','name')->get();
-            // for trial
-            // dump($departments[0]->id);
-            // dump($departments[0]->name);
-    
+            $departments = Department::select('id','name')->get();    
             $arr['departments'] = $departments;
             return view('Admin.Course.add_view', $arr);
         }
@@ -53,6 +56,18 @@ class course_cont extends Controller
             $arr['departments'] = $departments;
             $arr['course'] = $course;
             return view('Admin.Course.update_view',$arr);
+        }
+    }
+    // this is the delete function
+    public function delete(Request $request , $id){
+        $course = Course::find($id);
+        if($request->isMethod('post')){
+            $course->delete();
+            return redirect(route('Course.Index'));
+        }
+        else{
+            $arr['course'] = $course;
+            return view('Admin.Course.delete_view',$arr);
         }
     }
 }

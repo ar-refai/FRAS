@@ -16,6 +16,9 @@
     
     <!-- MetisMenu CSS -->
     {!! Html::style('Admin/vendor/metisMenu/metisMenu.min.css') !!}
+    <!-- DataTables CSS  -->
+    {!! Html::style('Admin/vendor/datatables-plugins/dataTables.bootstrap.css') !!}
+    {!! Html::style('Admin/vendor/datatables-responsive/dataTables.responsive.css') !!}
     
     <!-- Custom CSS -->
     {!! Html::style('Admin/dist/css/sb-admin-2.css') !!}
@@ -362,18 +365,26 @@
 
     </div>
     <!-- /#wrapper -->
-
     <!-- jQuery -->
-    {!! Html::script('Admin\vendor/jquery/jquery.min.js') !!}
-
+    {!! Html::script('Admin/vendor/jquery/jquery.min.js') !!}
     <!-- Bootstrap Core JavaScript -->
-    {!! Html::script('Admin\vendor/bootstrap/js/bootstrap.min.js') !!}
-    
+    {!! Html::script('Admin/vendor/bootstrap/js/bootstrap.min.js') !!}
     <!-- Metis Menu Plugin JavaScript -->
-    {!! Html::script('Admin\vendor/metisMenu/metisMenu.min.js') !!}
-    
-    <!-- Custom Theme JavaScript -->
-    {!! Html::script('Admin\dist/js/sb-admin-2.js') !!}
+    {!! Html::script('Admin/vendor/metisMenu/metisMenu.min.js') !!}
+    <!-- DataTables JavaScript -->
+    {!! Html::script('Admin/vendor/datatables/js/jquery.dataTables.min.js') !!}
+    {!! Html::script('Admin/vendor/datatables-plugins/dataTables.bootstrap.min.js') !!}
+    {!! Html::script('Admin/vendor/datatables-responsive/dataTables.responsive.js') !!}
+        <!-- Custom Theme JavaScript -->
+    {!! Html::script('Admin/dist/js/sb-admin-2.js') !!}
+    <script>
+    $(document).ready(function () {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+
+</script>
 
 </body>
 
