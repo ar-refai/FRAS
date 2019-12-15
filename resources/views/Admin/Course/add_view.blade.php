@@ -8,7 +8,7 @@ Add Course
 @section('content')
 <form class="table-bordered" style="padding:20px" method="post" action="">
     {{ csrf_field() }}
-    <div class="col-lg-4">
+    <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             Add Course

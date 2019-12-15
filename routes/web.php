@@ -24,13 +24,11 @@ Route::prefix('/')->group(function(){
     Route::get('/courses', function (){
         return view('courses_view');
     });
-
-    Route::get('/admin/main', function (){
-        return view('admin_view');
-    });
 });
 
 Route::prefix('Admin')->group(function(){
+    Route::get('Index/','Admin\Index_cont@index')->name('Admin.Index');
+
     // this is grouping of courses
     Route::prefix('Course')->group(function(){
         Route::get('/','Admin\Course\course_cont@index')->name('Course.Index');
@@ -55,6 +53,17 @@ Route::prefix('Admin')->group(function(){
         Route::get('Delete/{id}','Admin\Student\Student_cont@delete')->name('Student.Delete');;
         Route::post('Delete/{id}','Admin\Student\Student_cont@delete')->name('Student.Delete');;
     });
+
+          // this is grouping of doctors
+          Route::prefix('Doctor')->group(function(){
+            Route::get('/','Admin\Doctor\Doctor_cont@index')->name('Doctor.Index');
+    
+            Route::get('Add','Admin\Doctor\Doctor_cont@add')->name('Doctor.Add');;
+            Route::post('Add','Admin\Doctor\Doctor_cont@add')->name('Doctor.Add');;
+    
+            Route::get('Delete/{id}','Admin\Doctor\Doctor_cont@delete')->name('Doctor.Delete');;
+            Route::post('Delete/{id}','Admin\Doctor\Doctor_cont@delete')->name('Doctor.Delete');;
+        });
 
 
     // this is grouping of images

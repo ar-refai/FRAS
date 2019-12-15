@@ -1,15 +1,15 @@
 @extends('layouts.admin_app')
 <!-- the title section  -->
 @section('title')
-Edit Students
+Edit Doctors
 @endsection
 <!-- the content section -->
 @section('content')
 <div class="col-lg-12">
-        <a class="btn btn-link" style="font-size:16px;" href="{{route('Student.Add')}}"><span class="fa fa-user fa-fw"></span>Add Student</a>
+        <a class="btn btn-link" style="font-size:16px;" href="{{route('Doctor.Add')}}"><span class="fa fa-user fa-fw"></span>Add Doctors</a>
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Students
+            Doctors
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
@@ -25,9 +25,15 @@ Edit Students
                                     <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1"
                                         colspan="1" aria-label="Name: activate to sort column descending"
                                         style="width: 71px;" aria-sort="ascending">Name</th>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1"
+                                        colspan="1" aria-label="Email: activate to sort column descending"
+                                        style="width: 71px;" aria-sort="ascending">Email</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
                                         colspan="1" aria-label="Phone: activate to sort column ascending"
                                         style="width: 90px;">Phone</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
+                                        colspan="1" aria-label="Password: activate to sort column ascending"
+                                        style="width: 81px;">Password</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
                                         colspan="1" aria-label="Age: activate to sort column ascending"
                                         style="width: 81px;">Age</th>
@@ -48,16 +54,18 @@ Edit Students
                             </thead>
                             <tbody>
 
-                            @foreach($students as $student)
+                            @foreach($doctors as $doctors)
                                 <tr class="gradeA odd" role="row">
-                                    <td class="sorting_1">{{$student->name}}</td>
-                                    <td>{{$student->phone}}</td>
-                                    <td class="center">{{$student->age}}</td>
-                                    <td class="center">{{$student->sex}}</td>
-                                    <td>{{$student->department->name}}</td>
-                                    <td class="center">{{$student->path}}</td>
+                                    <td class="sorting_1">{{$doctors->name}}</td>
+                                    <td class="sorting_1">{{$doctors->email}}</td>
+                                    <td>{{$doctors->phone}}</td>
+                                    <td>{{$doctors->password}}</td>
+                                    <td class="center">{{$doctors->age}}</td>
+                                    <td class="center">{{$doctors->sex}}</td>
+                                    <td>{{$doctors->department->name}}</td>
+                                    <td class="center">{{$doctors->path}}</td>
                                     <td class="center text-center">
-                                        <a class="btn btn-outline btn-danger btn-sm" style="margin-bottom:5px;" href="{{route('Student.Delete',['id'=>$student->id])}}">Delete</a>
+                                        <a class="btn btn-outline btn-danger btn-sm" style="margin-bottom:5px;" href="{{route('Doctor.Delete',['id'=>$doctors->id])}}">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

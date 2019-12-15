@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">FRASystem Admin</a>
+                <a class="navbar-brand" href="{{route('Admin.Index')}}">FRASystem Admin</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -273,6 +273,9 @@
                         </li>
                         <li>
                             <a href="{{route('Image.Index')}}"><i class="fa fa-photo fa-fw"></i> Gallary</a>
+                        </li>
+                        <li>
+                            <a href="{{route('Doctor.Index')}}"><i class="fa fa-user fa-fw"></i> Doctors</a>
                         </li>
                         
 

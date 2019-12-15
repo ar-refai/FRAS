@@ -25,6 +25,8 @@ class Doctor extends Model
         'age',
         'sex',
         'dept_id',
+        'imgpath',
+
     ];
        // one to many relation between depts and doctors
        public function Department(){
