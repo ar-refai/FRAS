@@ -106,7 +106,10 @@
                         <li>
                             <a href="{{route('CourseWeek.Index')}}"><i class="fa fa-calendar fa-fw"></i> Weeks in Courses</a>
                         </li>
-                        
+                        <li>
+                            <a href="{{route('StudentWeek.Index')}}"><i class="fa fa-flag fa-fw"></i> Student Week Attended</a>
+                        </li>
+
 
                     </ul>
                 </div>

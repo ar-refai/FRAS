@@ -1,15 +1,15 @@
 @extends('layouts.admin_app')
 <!-- the title section  -->
 @section('title')
-Edit Course Students
+Edit Week's Students
 @endsection
 <!-- the content section -->
 @section('content')
 <div class="col-lg-12">
-        <a class="btn btn-link" style="font-size:16px;" href="{{route('CourseStudent.Add')}}"><span class="fa fa-users fa-fw"></span>Add Students To Course</a>
+        <a class="btn btn-link" style="font-size:16px;" href="{{route('StudentWeek.Add')}}"><span class="fa fa-users fa-fw"></span>Add Students To Weeks(Take Attendance)</a>
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Course Students
+            Week's Students
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
@@ -23,11 +23,14 @@ Edit Course Students
                             <thead>
                                 <tr role="row">
                                     <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1"
-                                        colspan="1" aria-label="Course: activate to sort column descending"
-                                        style="width: 71px;" aria-sort="ascending">Course</th>
+                                        colspan="1" aria-label="Week: activate to sort column descending"
+                                        style="width: 71px;" aria-sort="ascending">Week</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
                                         colspan="1" aria-label="Student: activate to sort column ascending"
                                         style="width: 90px;">Student</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
+                                        colspan="1" aria-label="Attendance: activate to sort column ascending"
+                                        style="width: 90px;">Attendance</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
                                         colspan="1" aria-label="Action: activate to sort column ascending"
                                         style="width: 90px;">Action</th>
@@ -36,14 +39,21 @@ Edit Course Students
                             </thead>
                             <tbody>
 
-                            @foreach($courseStus as $courseStu)
+                            @foreach($studentWeeks as $studentWeek)
 
                                 <tr class="gradeA odd" role="row">
                                     
-                                    <td class="sorting_1">{{App\Model\Course::find($courseStu->course_id)->name}}</td>
-                                    <td>{{App\Model\Student::find($courseStu->student_id)->name}}</td>
+                                    <td class="sorting_1">{{App\Model\Week::find($studentWeek->week_id)->name}}</td>
+                                    <td>{{App\Model\Student::find($studentWeek->student_id)->name}}</td>
+                                    <td>
+                                        @if($studentWeek->Attended)
+                                        Yes
+                                        @else
+                                        No
+                                        @endif
+                                    </td>
                                     <td class="text-center">
-                                        <a class="btn btn-outline btn-danger  btn-md" style="margin-bottom:5px;" href="{{route('CourseStudent.Delete',['student_id'=>$courseStu->student_id,'course_id'=>$courseStu->course_id])}}">Delete</a>
+                                        <a class="btn btn-outline btn-danger  btn-md" style="margin-bottom:5px;" href="{{route('StudentWeek.Delete',['student_id'=>$studentWeek->student_id,'week_id'=>$studentWeek->week_id])}}">Delete</a>
                                     </td>
             
                                 </tr>
