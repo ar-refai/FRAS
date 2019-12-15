@@ -45,7 +45,7 @@ Add Doctor
 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="sex" id="exampleRadios1"
-                        value="option1" checked>
+                        value="Male" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         Male
                     </label>
@@ -53,7 +53,7 @@ Add Doctor
 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="sex" id="exampleRadios2"
-                        value="option2">
+                        value="Female">
                     <label class="form-check-label" for="exampleRadios2">
                         Female
                     </label>

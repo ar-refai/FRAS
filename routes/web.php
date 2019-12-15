@@ -10,18 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+// dont need auth
 
-Route::get('/home', 'HomeController@index')->name('home');
-
- Route::get('/', function () {
-     return view('welcome');
- });
+//  Route::get('/', function () {
+//      return view('welcome');
+//  });
 
 
 //  the main web pages
 Route::prefix('/')->group(function(){
-    Route::get('/MainPage','Web\Main\Main_cont@index')->name('Web.Main');
+    Route::get('/','Web\Main\Main_cont@index')->name('Web.Main');
 
     Route::get('/courses', function (){
         return view('courses_view');
@@ -30,7 +28,7 @@ Route::prefix('/')->group(function(){
 
 
 
-    
+
     
 });
 
@@ -112,3 +110,15 @@ Route::prefix('Admin')->group(function(){
 
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
