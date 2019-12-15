@@ -39,13 +39,7 @@
               <a class="nav-link" href="{{route('Web.Main')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Courses</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Doctors</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="{{route('Admin.Index')}}">Admin Panel</a>
             </li>
           </ul>
         </div>

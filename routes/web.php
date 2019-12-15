@@ -21,14 +21,6 @@
 Route::prefix('/')->group(function(){
     Route::get('/','Web\Main\Main_cont@index')->name('Web.Main');
 
-    Route::get('/courses', function (){
-        return view('courses_view');
-    });
-
-
-
-
-
     
 });
 
@@ -49,6 +41,40 @@ Route::prefix('Admin')->group(function(){
         Route::get('Delete/{id}','Admin\Course\course_cont@delete')->name('Course.Delete');;
         Route::post('Delete/{id}','Admin\Course\course_cont@delete')->name('Course.Delete');;
     });
+
+        // this is grouping of students in courses
+        Route::prefix('CourseStudent')->group(function(){
+            Route::get('/','Admin\CourseStudent\CourseStudent_cont@index')->name('CourseStudent.Index');
+    
+            Route::get('Add','Admin\CourseStudent\CourseStudent_cont@add')->name('CourseStudent.Add');;
+            Route::post('Add','Admin\CourseStudent\CourseStudent_cont@add')->name('CourseStudent.Add');;
+        
+            Route::get('Delete/{id}','Admin\CourseStudent\CourseStudent_cont@delete')->name('CourseStudent.Delete');;
+            Route::post('Delete/{id}','Admin\CourseStudent\CourseStudent_cont@delete')->name('CourseStudent.Delete');;
+        });
+
+            // this is grouping of weeks in courses
+            Route::prefix('CourseWeek')->group(function(){
+                Route::get('/','Admin\CourseWeek\CourseWeek_cont@index')->name('CourseWeek.Index');
+        
+                Route::get('Add','Admin\CourseWeek\CourseWeek_cont@add')->name('CourseWeek.Add');;
+                Route::post('Add','Admin\CourseWeek\CourseWeek_cont@add')->name('CourseWeek.Add');;
+                
+                Route::get('Delete/{id}','Admin\CourseWeek\CourseWeek_cont@delete')->name('CourseWeek.Delete');;
+                Route::post('Delete/{id}','Admin\CourseWeek\CourseWeek_cont@delete')->name('CourseWeek.Delete');;
+            });
+
+                   // this is grouping of students in weeks
+                   Route::prefix('StudentWeek')->group(function(){
+                    Route::get('/','Admin\StudentWeek\StudentWeek_cont@index')->name('StudentWeek.Index');
+            
+                    Route::get('Add','Admin\StudentWeek\StudentWeek_cont@add')->name('StudentWeek.Add');;
+                    Route::post('Add','Admin\StudentWeek\StudentWeek_cont@add')->name('StudentWeek.Add');;
+                    
+                    Route::get('Delete/{id}','Admin\StudentWeek\StudentWeek_cont@delete')->name('StudentWeek.Delete');;
+                    Route::post('Delete/{id}','Admin\StudentWeek\StudentWeek_cont@delete')->name('StudentWeek.Delete');;
+                });
+    
 
        // this is grouping of students
        Route::prefix('Student')->group(function(){

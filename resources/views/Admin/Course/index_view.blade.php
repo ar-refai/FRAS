@@ -7,6 +7,7 @@ Edit Courses
 @section('content')
 <div class="col-lg-12">
         <a class="btn btn-link" style="font-size:16px;" href="{{route('Course.Add')}}"><span class="fa fa-book fa-fw"></span>Add Course</a>
+
     <div class="panel panel-primary">
         <div class="panel-heading">
             Courses
@@ -34,6 +35,7 @@ Edit Courses
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
                                         colspan="1" aria-label="Level: activate to sort column ascending"
                                         style="width: 61px;">Level</th>
+                                    
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
                                         colspan="1" aria-label="Action: activate to sort column ascending"
                                         style="width: 61px;">Action</th>
@@ -48,8 +50,9 @@ Edit Courses
                                     <td>{{$course->description}}</td>
                                     <td>{{$course->department->name}}</td>
                                     <td class="center">{{$course->level}}</td>
+                
                                     <td class="center text-center">
-                                        <a class="btn btn-outline btn-warning btn-sm " style="margin-bottom:5px;" href="{{route('Course.Update',['id'=>$course->id])}}">Update</a>
+                                        <a class="btn btn-outline btn-warning btn-sm " style="margin-bottom:5px;" href="{{route('Course.Update',$course->id)}}">Update</a>
                                         <a class="btn btn-outline btn-danger btn-sm" style="margin-bottom:5px;" href="{{route('Course.Delete',['id'=>$course->id])}}">Delete</a>
                                     </td>
                                 </tr>

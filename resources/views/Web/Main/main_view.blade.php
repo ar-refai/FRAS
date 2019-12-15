@@ -42,7 +42,7 @@ This is our Face Recognition Attendance System.
 
                 <p class="card-text">{{$course->description}} And This course is for Studied At Level
                     {{$course->level}}</p>
-                <a href="#" class="btn btn-primary">Go Now</a>
+                <!-- <a href="route('Main.Index',['id'=>$course->id])" class="btn btn-primary">Go Now</a> -->
 
             </div>
 
