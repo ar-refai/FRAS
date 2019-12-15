@@ -54,16 +54,27 @@ Route::prefix('Admin')->group(function(){
         Route::post('Delete/{id}','Admin\Student\Student_cont@delete')->name('Student.Delete');;
     });
 
-          // this is grouping of doctors
-          Route::prefix('Doctor')->group(function(){
-            Route::get('/','Admin\Doctor\Doctor_cont@index')->name('Doctor.Index');
-    
-            Route::get('Add','Admin\Doctor\Doctor_cont@add')->name('Doctor.Add');;
-            Route::post('Add','Admin\Doctor\Doctor_cont@add')->name('Doctor.Add');;
-    
-            Route::get('Delete/{id}','Admin\Doctor\Doctor_cont@delete')->name('Doctor.Delete');;
-            Route::post('Delete/{id}','Admin\Doctor\Doctor_cont@delete')->name('Doctor.Delete');;
-        });
+        // this is grouping of doctors
+    Route::prefix('Doctor')->group(function(){
+        Route::get('/','Admin\Doctor\Doctor_cont@index')->name('Doctor.Index');
+
+        Route::get('Add','Admin\Doctor\Doctor_cont@add')->name('Doctor.Add');;
+        Route::post('Add','Admin\Doctor\Doctor_cont@add')->name('Doctor.Add');;
+
+        Route::get('Delete/{id}','Admin\Doctor\Doctor_cont@delete')->name('Doctor.Delete');;
+        Route::post('Delete/{id}','Admin\Doctor\Doctor_cont@delete')->name('Doctor.Delete');;
+    });
+
+    // this is grouping of departments
+    Route::prefix('Department')->group(function(){
+        Route::get('/','Admin\Department\Department_cont@index')->name('Department.Index');
+
+        Route::get('Add','Admin\Department\Department_cont@add')->name('Department.Add');;
+        Route::post('Add','Admin\Department\Department_cont@add')->name('Department.Add');;
+
+        Route::get('Delete/{id}','Admin\Department\Department_cont@delete')->name('Department.Delete');;
+        Route::post('Delete/{id}','Admin\Department\Department_cont@delete')->name('Department.Delete');;
+    });
 
 
     // this is grouping of images

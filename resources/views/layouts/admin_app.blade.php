@@ -277,6 +277,12 @@
                         <li>
                             <a href="{{route('Doctor.Index')}}"><i class="fa fa-user fa-fw"></i> Doctors</a>
                         </li>
+                        <li>
+                            <a href="{{route('Department.Index')}}"><i class="fa fa-user fa-fw"></i> Departments</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Weeks</a>
+                        </li>
                         
 
                     </ul>
