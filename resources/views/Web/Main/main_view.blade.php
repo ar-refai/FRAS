@@ -32,7 +32,7 @@ This is our Face Recognition Attendance System.
 <div class="row">
     @foreach($courses as $course)
     
-    <div class="col-4">
+    <div class="col-md-4">
 
         <div class="card p-4 my-4">
             <div class="card-body">

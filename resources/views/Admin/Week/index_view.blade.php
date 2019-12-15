@@ -1,15 +1,15 @@
 @extends('layouts.admin_app')
 <!-- the title section  -->
 @section('title')
-Edit Department
+Edit Week
 @endsection
 <!-- the content section -->
 @section('content')
 <div class="col-lg-12">
-        <a class="btn btn-link" style="font-size:16px;" href="{{route('Department.Add')}}"><span class="fa fa-building fa-fw"></span>Add Department</a>
+        <a class="btn btn-link" style="font-size:16px;" href="{{route('Week.Add')}}"><span class="fa fa-calendar fa-fw"></span>Add Week</a>
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Department
+            Week
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
@@ -22,12 +22,12 @@ Edit Department
                             style="width: 100%;">
                             <thead>
                                 <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1"
+                                        colspan="1" aria-label="ID: activate to sort column descending"
+                                        style="width: 71px;" aria-sort="ascending">ID</th>
                                     <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1"
                                         colspan="1" aria-label="Name: activate to sort column descending"
                                         style="width: 71px;" aria-sort="ascending">Name</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
-                                        colspan="1" aria-label="Description: activate to sort column ascending"
-                                        style="width: 90px;">Description</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1"
                                         colspan="1" aria-label="Action: activate to sort column ascending"
                                         style="width: 61px;">Action</th>
@@ -36,12 +36,12 @@ Edit Department
                             </thead>
                             <tbody>
 
-                            @foreach($departments as $department)
+                            @foreach($weeks as $week)
                                 <tr class="gradeA odd" role="row">
-                                    <td class="sorting_1">{{$department->name}}</td>
-                                    <td>{{$department->description}}</td>
+                                    <td class="sorting_1">{{$week->id}}</td>
+                                    <td class="sorting_1">{{$week->name}}</td>
                                     <td class="center text-center">
-                                        <a class="btn btn-outline btn-danger btn-sm" style="margin-bottom:5px;" href="{{route('Department.Delete',['id'=>$department->id])}}">Delete</a>
+                                        <a class="btn btn-outline btn-danger btn-sm" style="margin-bottom:5px;" href="{{route('Week.Delete',['id'=>$week->id])}}">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

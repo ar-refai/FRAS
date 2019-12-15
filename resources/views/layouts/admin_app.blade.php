@@ -266,6 +266,9 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
+                            <a href="{{route('Admin.Index')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
                             <a href="{{route('Course.Index')}}"><i class="fa fa-book fa-fw"></i> Courses</a>
                         </li>
                         <li>
@@ -278,10 +281,10 @@
                             <a href="{{route('Doctor.Index')}}"><i class="fa fa-user fa-fw"></i> Doctors</a>
                         </li>
                         <li>
-                            <a href="{{route('Department.Index')}}"><i class="fa fa-user fa-fw"></i> Departments</a>
+                            <a href="{{route('Department.Index')}}"><i class="fa fa-building fa-fw"></i> Departments</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Weeks</a>
+                            <a href="{{route('Week.Index')}}"><i class="fa fa-calendar fa-fw"></i> Weeks</a>
                         </li>
                         
 

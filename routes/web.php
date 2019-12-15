@@ -14,18 +14,27 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+     return view('welcome');
+ });
 
+
+//  the main web pages
 Route::prefix('/')->group(function(){
     Route::get('/MainPage','Web\Main\Main_cont@index')->name('Web.Main');
 
     Route::get('/courses', function (){
         return view('courses_view');
     });
+
+
+
+
+    
+    
 });
 
+//  the admin panel 
 Route::prefix('Admin')->group(function(){
     Route::get('Index/','Admin\Index_cont@index')->name('Admin.Index');
 
@@ -75,6 +84,17 @@ Route::prefix('Admin')->group(function(){
         Route::get('Delete/{id}','Admin\Department\Department_cont@delete')->name('Department.Delete');;
         Route::post('Delete/{id}','Admin\Department\Department_cont@delete')->name('Department.Delete');;
     });
+
+        // this is grouping of weeks
+        Route::prefix('Week')->group(function(){
+            Route::get('/','Admin\Week\Week_cont@index')->name('Week.Index');
+    
+            Route::get('Add','Admin\Week\Week_cont@add')->name('Week.Add');;
+            Route::post('Add','Admin\Week\Week_cont@add')->name('Week.Add');;
+    
+            Route::get('Delete/{id}','Admin\Week\Week_cont@delete')->name('Week.Delete');;
+            Route::post('Delete/{id}','Admin\Week\Week_cont@delete')->name('Week.Delete');;
+        });
 
 
     // this is grouping of images
